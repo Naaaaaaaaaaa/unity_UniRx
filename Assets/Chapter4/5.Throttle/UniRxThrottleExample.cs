@@ -14,6 +14,7 @@ namespace UniRxLesson
     {
         void Start()
         {
+            //Throttle在没有接收到信息源一秒后输出“after 1 seconds”
             Observable.EveryUpdate()
                       .Where(_ => Input.GetMouseButtonDown(0))
                       .Throttle(TimeSpan.FromSeconds(1.0f))
